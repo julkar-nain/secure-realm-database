@@ -1,1 +1,1 @@
-include ':app', ':securerealmkey'
+include ':app', ':library'

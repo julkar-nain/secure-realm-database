@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Secure Realm Key</string>
+    <string name="secure_realm_encryption_key">Secure Realm Encryption Key</string>
 </resources>

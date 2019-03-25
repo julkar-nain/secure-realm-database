@@ -197,14 +197,13 @@ public class EncryptionProvider {
         try {
             KeyGenParameterSpec spec = new KeyGenParameterSpec.Builder(alias,
                     KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)
-                    .setAlgorithmParameterSpec(new RSAKeyGenParameterSpec(512, F4))
+                    .setAlgorithmParameterSpec(new RSAKeyGenParameterSpec(1024, F4))
                     .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
                     .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_RSA_PKCS1)
                     .setDigests(KeyProperties.DIGEST_SHA256,
                             KeyProperties.DIGEST_SHA384,
                             KeyProperties.DIGEST_SHA512)
                     .setUserAuthenticationRequired(false)
-                    .setKeySize(512)
                     .build();
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(
                     KeyProperties.KEY_ALGORITHM_RSA, ANDROID_KEYSTORE);

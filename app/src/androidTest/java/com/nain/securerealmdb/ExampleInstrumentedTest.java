@@ -1,4 +1,4 @@
-package com.nain.securerealmkey;
+package com.nain.securerealmdb;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.nain.securerealmkey.test", appContext.getPackageName());
+        assertEquals("com.nain.securerealmkey", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.nain.securerealmkey;
+package com.nain.securerealmdb;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

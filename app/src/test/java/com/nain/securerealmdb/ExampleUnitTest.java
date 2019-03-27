@@ -1,4 +1,4 @@
-package com.nain.securerealmkey;
+package com.nain.securerealmdb;
 
 import org.junit.Test;
 

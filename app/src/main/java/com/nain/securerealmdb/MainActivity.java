@@ -3,6 +3,8 @@ package com.nain.securerealmdb;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.nain.securerealmdb.realmencryptionkey.RealmEncryptionKeyProvider;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private RealmConfiguration initializeRealmConfig() {
-        SecureRealmKeyProvider secureRealmKeyProvider = new SecureRealmKeyProvider(this);
+        RealmEncryptionKeyProvider secureRealmKeyProvider = new RealmEncryptionKeyProvider(this);
         byte[] encryptionKey = secureRealmKeyProvider.getSecureRealmKey();
 
         return new RealmConfiguration.Builder()

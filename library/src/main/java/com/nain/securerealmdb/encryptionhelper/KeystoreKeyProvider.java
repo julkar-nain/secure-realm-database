@@ -1,4 +1,4 @@
-package com.nain.securerealmdb;
+package com.nain.securerealmdb.encryptionhelper;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -40,7 +40,7 @@ import static java.security.spec.RSAKeyGenParameterSpec.F4;
  * @author julkar nain
  * @since 12/20/18
  */
-public class EncryptionProvider {
+public class KeystoreKeyProvider {
     private static final String ANDROID_KEYSTORE = "AndroidKeyStore";
     private static final String ALGORITHOM_TYPE = "RSA";
     private static final String PADDING_TYPE = "PKCS1Padding";
@@ -49,12 +49,12 @@ public class EncryptionProvider {
     private String alias;
 
 
-    public EncryptionProvider(Context context) {
+    public KeystoreKeyProvider(Context context) {
         this.context = context;
         this.alias = DEFAULT_ALIAS;
     }
 
-    public EncryptionProvider(Context context, String keyAlias) {
+    public KeystoreKeyProvider(Context context, String keyAlias) {
         this.context = context;
         this.alias = keyAlias;
     }

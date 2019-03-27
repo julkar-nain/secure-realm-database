@@ -1,4 +1,4 @@
-package com.nain.securerealmdb.encryptionhelper;
+package com.nain.securerealmdb.key;
 
 import android.annotation.TargetApi;
 import android.content.Context;

@@ -1,10 +1,13 @@
-package com.nain.securerealmdb.encryptionhelper;
+package com.nain.securerealmdb.key;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+
+import javax.crypto.KeyGenerator;
 
 /**
  * This Class provides secure key
@@ -32,7 +35,7 @@ public class SecureKeyProvider {
     /**
      * This method provide secure encryption key
      *
-     * @param keySize
+     * @param keySize (bit)
      * @param preferencesKey
      *
      * @return key
@@ -54,9 +57,15 @@ public class SecureKeyProvider {
     }
 
     private byte[] createSecureKey(int keySize, String preferencesKey) {
-        byte[] key = new byte[keySize];
-        SecureRandom secureRandom = new SecureRandom();
-        secureRandom.nextBytes(key);
+        KeyGenerator keyGenerator = null;
+        try {
+            keyGenerator = KeyGenerator.getInstance("AES");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        keyGenerator.init(keySize, new SecureRandom());
+        byte[] key = keyGenerator.generateKey().getEncoded();
+
         saveSecureKey(key, preferencesKey);
 
         return key;

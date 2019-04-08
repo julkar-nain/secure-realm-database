@@ -1,5 +1,6 @@
 Secure Realm Database for android
 =================================
+This is an android library that helps you to ensure data security of realm database in android device. Initially the library is focused on realm database only but this idea can be used for any other database. [This article](https://dzone.com/articles/secure-realm-encryption-key-for-android-applicatio)  demostrates the library in more easier way
 ## Feature
 This Library helps to secure your realm database for android device. It provides the following features :
 
@@ -52,7 +53,7 @@ You can encrypt any specific data and store that in database if you don't want t
     String plainTextAgian = encryptionProvider.getPlainText(encyptedText);
     
     
-This library can ensure your data security for realm database. You can use non reversible encryption for storing password, pin or any other sensitive data that shouldn't be revealed.
+The library can ensure your data security for realm database. You can use non reversible encryption for storing password, pin or any other sensitive data that shouldn't be revealed.
 
         String userName = "user name";
         String passwrod = "password";
